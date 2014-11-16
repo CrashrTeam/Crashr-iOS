@@ -8,20 +8,56 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
-    @IBOutlet weak var mapView: UIView!
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var listingsButton: BFPaperButton!
+    @IBOutlet weak var statusBarView: UIView!
+    
+    let manager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // user location
+        self.manager.delegate = self
+        self.manager.requestWhenInUseAuthorization()
+        
+        // listings button setup
+        self.listingsButton.cornerRadius = self.listingsButton.frame.size.width/2
+        self.listingsButton.backgroundColor = tintColor
+        self.listingsButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        self.listingsButton.setTitleColor(UIColor.whiteColor(), forState: .Highlighted)
+        self.listingsButton.tapCircleColor = UIColor.paperColorBrown400()
+        
+        // status bar view setup
+        self.statusBarView.backgroundColor = tintColor
+        
+        // map setup
+        self.mapView.myLocationEnabled = true
+        self.mapView.settings.myLocationButton = true
+        self.mapView.delegate = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        delay(0.1) {
+            let update = GMSCameraUpdate.setTarget(self.mapView.myLocation.coordinate)
+            self.mapView.animateWithCameraUpdate(update)
+            self.mapView.animateToZoom(15.0)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
+    // MARK: - Map View Delegate
+    
     
 
     /*

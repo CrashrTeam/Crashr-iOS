@@ -16,7 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        // google maps api
         GMSServices.provideAPIKey("AIzaSyDe5ZA4ozk1HGlTcCZ6YVObh55bzyo6R2k")
+        
+        // visual setup
+        self.window?.tintColor = tintColor
         
         return true
     }

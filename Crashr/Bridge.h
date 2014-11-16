@@ -10,5 +10,7 @@
 #define Crashr_Bridge_h
 
 #import <GoogleMaps/GoogleMaps.h>
+#import "UIColor+BFPaperColors.h"
+#import "BFPaperButton.h"
 
 #endif
