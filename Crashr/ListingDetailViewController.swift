@@ -14,6 +14,12 @@ class ListingDetailViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var fadeView: UIView!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    @IBOutlet weak var imageView1: UIImageView!
+    @IBOutlet weak var imageView2: UIImageView!
+    @IBOutlet weak var imageView3: UIImageView!
+    @IBOutlet weak var imageView4: UIImageView!
     
     var topViewHeightConstraint: NSLayoutConstraint!
     
@@ -23,10 +29,6 @@ class ListingDetailViewController: UIViewController {
         self.imageView.contentMode = .ScaleAspectFill
         self.fadeView.backgroundColor = tintColor
         self.compressTopView(false)
-        
-        // sample data
-        self.showImage(UIImage(named: "sample.JPG")!)
-        self.addressLabel.text = "Swag Engineering Center, Corvallis, OR"
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,8 +40,37 @@ class ListingDetailViewController: UIViewController {
         return .LightContent
     }
     
-    func showImage(image: UIImage) {
-        self.imageView.image = image
+    func applyListing(listing: Listing) {
+        // ugly hackathon code
+        self.imageView.image = listing.image
+        if listing.type == 1 {
+            self.imageView1.image = UIImage(named: "couch_icon.png")
+        } else {
+            self.imageView1.image = UIImage(named: "bed_icon.png")
+        }
+        if listing.food {
+            self.imageView2.image = UIImage(named: "dining_icon.png")
+            self.imageView2.alpha = 2.0
+            if listing.shower {
+                self.imageView3.image = UIImage(named: "shower_icon.png")
+                self.imageView3.alpha = 1.0
+            } else {
+                self.imageView3.alpha = 0.0
+            }
+        } else {
+            if listing.shower {
+                self.imageView2.image = UIImage(named: "shower_icon.png")
+                self.imageView3.alpha = 1.0
+            } else {
+                self.imageView2.alpha = 0.0
+            }
+            self.imageView3.alpha = 0.0
+        }
+        self.imageView4.alpha = 0.0
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        formatter.currencyCode = "USD"
+        self.priceLabel.text = formatter.stringFromNumber(listing.cost)
     }
     
     func expandTopView(animated: Bool) {

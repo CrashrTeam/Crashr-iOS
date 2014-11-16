@@ -22,6 +22,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     let manager = CLLocationManager()
     
+    var listingDictionary: [String : Listing]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,10 +85,16 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     }
     
     func addMarkers(listings: [Listing]) {
+        self.listingDictionary = [:]
         for listing in listings {
-            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: listing.coordinates.latitude, longitude: listing.coordinates.longitude))
-            marker.title = "Test Marker"
-            marker.map = self.mapView
+            getLocation(listing.street + " " + listing.city + " " + listing.state + " " + listing.zip) {
+                (location) -> () in
+                let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+                marker.title = listing.id
+                marker.map = self.mapView
+                marker.icon = GMSMarker.markerImageWithColor(tintColor)
+                self.listingDictionary[listing.id] = listing
+            }
         }
     }
     
@@ -151,12 +159,16 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     // MARK: - Map View Delegate
     
     func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+        let listing: Listing! = self.listingDictionary[marker.title]
+        self.bottomViewController.applyListing(listing)
+        self.bottomViewController.addressLabel.text = listing.street
         self.showBottomBar(true)
         return true
     }
     
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
         self.hideBottomBar(true)
+        self.bottomViewController.compressTopView(true)
     }
 
     /*

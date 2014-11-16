@@ -12,11 +12,13 @@ import Alamofire
 // MARK: - constants
 
 let API_URL = "http://crashr-app-test.appspot.com"
+let GEOCODING_URL = "https://maps.googleapis.com/maps/api/geocode/json"
+let GEO_API_KEY = "AIzaSyCV73rOsFQVDkuVUxlUYDE3PFGhVYDEJZE"
 
-// MARK: - functions
+// MARK: - our api functions
 
 func getListings(completion : [Listing] -> ()) {
-    Alamofire.request(.GET, API_URL, parameters: nil, encoding: .URL).responseJSON {
+    Alamofire.request(.GET, API_URL + "/getlistings", parameters: nil, encoding: .URL).responseJSON {
         (request, response, jsonRaw, error) -> () in
         if error != nil {
             println(error)
@@ -25,12 +27,27 @@ func getListings(completion : [Listing] -> ()) {
         let json = JSONValue(jsonRaw as [AnyObject])
         var result: [Listing] = []
         for listing in json.array as [JSONValue]! {
-            let latitude = listing["lat"].double!
-            let longitude = listing["long"].double!
-            let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            result.append(Listing(coordinates: location))
+            let street = listing["Street_add"].string!
+            let city = listing["City"].string!
+            let state = listing["State"].string!
+            let zip = listing["Zip"].string!
+            let description = listing["Desc"].string!
+            let shower = listing["Shower"].bool!
+            let food = listing["Food"].bool!
+            let id = listing["UID"].string!
+            result.append(Listing(id: id, street: street, city: city,
+                state: state, zip: zip, description: description, type: 1, shower: shower,
+                cost: 50.0, image: UIImage(named: "sample.JPG"), food: food))
         }
         completion(result)
     }
 }
 
+// MARK: - google api functions
+
+func getLocation(address: String, completion: (CLLocationCoordinate2D) -> ()) {
+    let geocoder = CLGeocoder()
+    geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) -> Void in
+        completion((placemarks[0] as CLPlacemark).location.coordinate)
+    })
+}

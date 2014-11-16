@@ -9,5 +9,15 @@
 import Foundation
 
 struct Listing {
-    var coordinates: CLLocationCoordinate2D!
+    var id: String!
+    var street: String!
+    var city: String!
+    var state: String!
+    var zip: String!
+    var description: String!
+    var type: Int! // 0 = Bed, 1 = Couch
+    var shower: Bool
+    var cost: Double!
+    var image: UIImage!
+    var food: Bool
 }

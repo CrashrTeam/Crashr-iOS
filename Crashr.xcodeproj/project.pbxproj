@@ -27,6 +27,10 @@
 		5E2874831A189879008E63B2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2874821A189879008E63B2 /* SwiftyJSON.swift */; };
 		5E2874881A189970008E63B2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2874871A189970008E63B2 /* Models.swift */; };
 		5E28749F1A189C25008E63B2 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2874981A189BB8008E63B2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E52F8991A18B0A1000671B7 /* bed_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E52F8951A18B0A1000671B7 /* bed_icon.png */; };
+		5E52F89A1A18B0A1000671B7 /* couch_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E52F8961A18B0A1000671B7 /* couch_icon.png */; };
+		5E52F89B1A18B0A1000671B7 /* dining_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E52F8971A18B0A1000671B7 /* dining_icon.png */; };
+		5E52F89C1A18B0A1000671B7 /* shower_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E52F8981A18B0A1000671B7 /* shower_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +105,10 @@
 		5E2874821A189879008E63B2 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		5E2874871A189970008E63B2 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5E2874921A189BB8008E63B2 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		5E52F8951A18B0A1000671B7 /* bed_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bed_icon.png; path = images/bed_icon.png; sourceTree = SOURCE_ROOT; };
+		5E52F8961A18B0A1000671B7 /* couch_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = couch_icon.png; path = images/couch_icon.png; sourceTree = SOURCE_ROOT; };
+		5E52F8971A18B0A1000671B7 /* dining_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dining_icon.png; path = images/dining_icon.png; sourceTree = SOURCE_ROOT; };
+		5E52F8981A18B0A1000671B7 /* shower_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shower_icon.png; path = images/shower_icon.png; sourceTree = SOURCE_ROOT; };
 		B2BF237E7C3DCF8E427931AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +178,10 @@
 		5E28743E1A17D54B008E63B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E52F8951A18B0A1000671B7 /* bed_icon.png */,
+				5E52F8961A18B0A1000671B7 /* couch_icon.png */,
+				5E52F8971A18B0A1000671B7 /* dining_icon.png */,
+				5E52F8981A18B0A1000671B7 /* shower_icon.png */,
 				5E2874821A189879008E63B2 /* SwiftyJSON.swift */,
 				5E28747E1A185F17008E63B2 /* sample.JPG */,
 				5E2874741A181F8E008E63B2 /* icon_raw.png */,
@@ -354,11 +366,15 @@
 			files = (
 				5E2874701A1802EF008E63B2 /* list@2x.png in Resources */,
 				5E2874751A181F8E008E63B2 /* icon_raw.png in Resources */,
+				5E52F8991A18B0A1000671B7 /* bed_icon.png in Resources */,
 				5E2874461A17D54C008E63B2 /* Main.storyboard in Resources */,
 				5E28744B1A17D54C008E63B2 /* LaunchScreen.xib in Resources */,
+				5E52F89C1A18B0A1000671B7 /* shower_icon.png in Resources */,
 				5E28747F1A185F17008E63B2 /* sample.JPG in Resources */,
 				5E2874481A17D54C008E63B2 /* Images.xcassets in Resources */,
+				5E52F89A1A18B0A1000671B7 /* couch_icon.png in Resources */,
 				5E2874711A1802EF008E63B2 /* list@3x.png in Resources */,
+				5E52F89B1A18B0A1000671B7 /* dining_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
