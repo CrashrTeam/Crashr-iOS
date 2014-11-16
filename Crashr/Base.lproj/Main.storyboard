@@ -83,6 +83,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Listing Detail View Controller-->
+        <scene sceneID="yvs-qk-gY0">
+            <objects>
+                <viewController storyboardIdentifier="listingDetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OP5-Ye-oXu" customClass="ListingDetailViewController" customModule="Crashr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kKo-y1-BPZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qYJ-7L-ZWZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vf6-hg-WgC">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuG-PR-VSb">
+                                <rect key="frame" x="134" y="139" width="31.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="OuG-PR-VSb" secondAttribute="centerY" constant="0.5" id="6a1-ae-rvN"/>
+                            <constraint firstAttribute="centerX" secondItem="OuG-PR-VSb" secondAttribute="centerX" id="X1b-9U-gb6"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EFG-DN-fMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423" y="1180"/>
+        </scene>
         <!--Listings View Controller-->
         <scene sceneID="FHx-va-CYu">
             <objects>

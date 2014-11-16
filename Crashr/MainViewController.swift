@@ -14,6 +14,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     @IBOutlet weak var listingsButton: BFPaperButton!
     @IBOutlet weak var statusBarView: UIView!
     
+    var detailViewController : ListingDetailViewController!
+    
     let manager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -37,6 +39,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         self.mapView.myLocationEnabled = true
         self.mapView.settings.myLocationButton = true
         self.mapView.delegate = self
+        
+        // test map marker
+        let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: 44.5666415, longitude: -123.2788342))
+        marker.title = "Test Marker"
+        marker.map = self.mapView
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -58,7 +65,14 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     // MARK: - Map View Delegate
     
+    func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+        self.mapView.settings.myLocationButton = false
+        return true
+    }
     
+    func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+        self.mapView.settings.myLocationButton = true
+    }
 
     /*
     // MARK: - Navigation

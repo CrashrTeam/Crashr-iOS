@@ -10,7 +10,6 @@ import UIKit
 
 class ListingsViewController: UIViewController {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

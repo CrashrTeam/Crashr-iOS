@@ -20,6 +20,7 @@
 		5E2874701A1802EF008E63B2 /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E28746E1A1802EF008E63B2 /* list@2x.png */; };
 		5E2874711A1802EF008E63B2 /* list@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E28746F1A1802EF008E63B2 /* list@3x.png */; };
 		5E2874751A181F8E008E63B2 /* icon_raw.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2874741A181F8E008E63B2 /* icon_raw.png */; };
+		5E2874771A18254D008E63B2 /* ListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2874761A18254D008E63B2 /* ListingDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		5E28746E1A1802EF008E63B2 /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
 		5E28746F1A1802EF008E63B2 /* list@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@3x.png"; sourceTree = "<group>"; };
 		5E2874741A181F8E008E63B2 /* icon_raw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_raw.png; sourceTree = "<group>"; };
+		5E2874761A18254D008E63B2 /* ListingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingDetailViewController.swift; sourceTree = "<group>"; };
 		B2BF237E7C3DCF8E427931AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 			children = (
 				5E2874611A17DAE6008E63B2 /* MainViewController.swift */,
 				5E2874691A17F4F3008E63B2 /* ListingsViewController.swift */,
+				5E2874761A18254D008E63B2 /* ListingDetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2874771A18254D008E63B2 /* ListingDetailViewController.swift in Sources */,
 				5E2874661A17E9A3008E63B2 /* Settings.swift in Sources */,
 				5E2874621A17DAE6008E63B2 /* MainViewController.swift in Sources */,
 				5E28746D1A17FC84008E63B2 /* NavigationController.swift in Sources */,
