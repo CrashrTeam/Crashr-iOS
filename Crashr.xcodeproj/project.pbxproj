@@ -31,6 +31,7 @@
 		5E52F89A1A18B0A1000671B7 /* couch_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E52F8961A18B0A1000671B7 /* couch_icon.png */; };
 		5E52F89B1A18B0A1000671B7 /* dining_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E52F8971A18B0A1000671B7 /* dining_icon.png */; };
 		5E52F89C1A18B0A1000671B7 /* shower_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E52F8981A18B0A1000671B7 /* shower_icon.png */; };
+		5E52F89F1A18EFAB000671B7 /* NewListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52F89E1A18EFAB000671B7 /* NewListingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		5E52F8961A18B0A1000671B7 /* couch_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = couch_icon.png; path = images/couch_icon.png; sourceTree = SOURCE_ROOT; };
 		5E52F8971A18B0A1000671B7 /* dining_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dining_icon.png; path = images/dining_icon.png; sourceTree = SOURCE_ROOT; };
 		5E52F8981A18B0A1000671B7 /* shower_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shower_icon.png; path = images/shower_icon.png; sourceTree = SOURCE_ROOT; };
+		5E52F89E1A18EFAB000671B7 /* NewListingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListingTableViewController.swift; sourceTree = "<group>"; };
 		B2BF237E7C3DCF8E427931AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +220,7 @@
 				5E2874691A17F4F3008E63B2 /* ListingsViewController.swift */,
 				5E28747A1A1854B3008E63B2 /* ListingDetailViewController.swift */,
 				5E2874801A18881A008E63B2 /* NewListingViewController.swift */,
+				5E52F89E1A18EFAB000671B7 /* NewListingTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				5E28746D1A17FC84008E63B2 /* NavigationController.swift in Sources */,
 				5E2874831A189879008E63B2 /* SwiftyJSON.swift in Sources */,
 				5E2874411A17D54B008E63B2 /* AppDelegate.swift in Sources */,
+				5E52F89F1A18EFAB000671B7 /* NewListingTableViewController.swift in Sources */,
 				5E28746A1A17F4F3008E63B2 /* ListingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -43,6 +43,21 @@ func getListings(completion : [Listing] -> ()) {
     }
 }
 
+func addListing(street: String, city: String, state: String, zip: String, food: Bool, shower: Bool, couchOrBed: Int, cost: String, desc: String) {
+    //addlisting?un=berg&st_add=123%20bana%20st&city=corvallis&state=oregon&zip=97330&desc=ayy%20lmao&food=True
+    let parameters = [
+        "un" : "cw",
+        "st_add" : street,
+        "city" : city,
+        "state" : state,
+        "zip" : zip,
+        "desc" : desc,
+        "food" : food ? "true" : "false",
+        "shower" : shower ? "true" : "false"
+    ]
+    Alamofire.request(.GET, API_URL + "/addlisting", parameters: parameters, encoding: .URL)
+}
+
 // MARK: - google api functions
 
 func getLocation(address: String, completion: (CLLocationCoordinate2D) -> ()) {
