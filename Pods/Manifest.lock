@@ -1,0 +1,17 @@
+PODS:
+  - BFPaperButton (1.5.6):
+    - UIColor+BFPaperColors
+  - Google-Maps-iOS-SDK (1.9.0)
+  - UIColor+BFPaperColors (1.3.1)
+
+DEPENDENCIES:
+  - BFPaperButton (~> 1.5.6)
+  - Google-Maps-iOS-SDK
+  - UIColor+BFPaperColors (~> 1.3.1)
+
+SPEC CHECKSUMS:
+  BFPaperButton: 4c3acb35204f5a09170edbecb1b3e95cea78f834
+  Google-Maps-iOS-SDK: d176593f33f931a500474a46c2a3c3d6d4b187cd
+  UIColor+BFPaperColors: c7e4c6e4d82e889d507b3c2d09e6caf816529f18
+
+COCOAPODS: 0.34.1
