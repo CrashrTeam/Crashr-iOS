@@ -55,19 +55,21 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         self.tapGestureRecognizer.numberOfTapsRequired = 1
         self.bottomView.addGestureRecognizer(self.tapGestureRecognizer)
         
-        // test map marker
-        let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: 44.5666415, longitude: -123.2788342))
-        marker.title = "Test Marker"
-        marker.map = self.mapView
+        // fetch data
+        getListings() { (listings) -> () in
+            self.addMarkers(listings)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
-        delay(0.1) {
-            let update = GMSCameraUpdate.setTarget(self.mapView.myLocation.coordinate)
-            self.mapView.animateWithCameraUpdate(update)
-            self.mapView.animateToZoom(15.0)
-            self.bottomViewController = self.storyboard?.instantiateViewControllerWithIdentifier("listingDetail") as ListingDetailViewController
-            self.bottomView.addSubview(self.bottomViewController.view)
+        if self.bottomViewController == nil {
+            delay(0.1) {
+                let update = GMSCameraUpdate.setTarget(self.mapView.myLocation.coordinate)
+                self.mapView.animateWithCameraUpdate(update)
+                self.mapView.animateToZoom(15.0)
+                self.bottomViewController = self.storyboard?.instantiateViewControllerWithIdentifier("listingDetail") as ListingDetailViewController
+                self.bottomView.addSubview(self.bottomViewController.view)
+            }
         }
     }
 
@@ -78,6 +80,14 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
+    }
+    
+    func addMarkers(listings: [Listing]) {
+        for listing in listings {
+            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: listing.coordinates.latitude, longitude: listing.coordinates.longitude))
+            marker.title = "Test Marker"
+            marker.map = self.mapView
+        }
     }
     
     // MARK: - tap gesture handlers

@@ -77,11 +77,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="zZP-wD-ni7"/>
                                 <exclude reference="RrU-p9-3Un"/>
                                 <exclude reference="UoI-Th-Ui8"/>
                                 <exclude reference="cGY-JK-mob"/>
                                 <exclude reference="5FM-Cu-hbW"/>
+                                <exclude reference="zZP-wD-ni7"/>
                                 <exclude reference="0Iq-vu-1Xr"/>
                             </mask>
                         </variation>
@@ -187,12 +187,46 @@
                                 <action selector="backButtonPressed:" destination="XeI-bQ-wbc" id="vJv-Ab-WE6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nuO-cq-jhE"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nuO-cq-jhE">
+                            <connections>
+                                <segue destination="xgU-pW-AXP" kind="show" id="gJI-MF-MmZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBF-el-Mhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1979" y="442"/>
+        </scene>
+        <!--New Listing View Controller-->
+        <scene sceneID="3dJ-WZ-6to">
+            <objects>
+                <viewController id="xgU-pW-AXP" customClass="NewListingViewController" customModule="Crashr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xVW-hn-EbJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="7G9-UR-AUC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iFQ-fq-YZ0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="r2G-ua-203">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r2G-ua-203" firstAttribute="top" secondItem="xVW-hn-EbJ" secondAttribute="bottom" constant="-64" id="3yy-3V-qi3"/>
+                            <constraint firstItem="r2G-ua-203" firstAttribute="leading" secondItem="iFQ-fq-YZ0" secondAttribute="leadingMargin" constant="-16" id="LLd-A2-591"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r2G-ua-203" secondAttribute="trailing" constant="-16" id="fbf-1t-vrM"/>
+                            <constraint firstItem="7G9-UR-AUC" firstAttribute="top" secondItem="r2G-ua-203" secondAttribute="bottom" id="q89-xo-aFk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5zk-Gt-JJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2671" y="442"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JLq-P5-YPa">
